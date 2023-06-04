@@ -1,14 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.projekt.KlientController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projekt.KlientController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="1315.0" styleClass="white-background" stylesheets="file:/D:/Intelijj/Projekt/src/main/java/css/styles.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="84.0" prefWidth="218.0" text="Whisky i Wodotryski">
+               <font>
+                  <Font name="Gentium Book Basic" size="20.0" />
+               </font>
+            </Label>
+            <Separator maxHeight="-Infinity" minHeight="-Infinity" orientation="VERTICAL" prefHeight="45.0" prefWidth="39.0" />
+            <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="37.0" prefWidth="540.0" spacing="20.0">
+               <children>
+                  <TextField prefHeight="34.0" prefWidth="497.0" promptText="search" stylesheets="file:/D:/Intelijj/Projekt/src/main/java/css/styles.css">
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="round-layout" />
+                     </styleClass></TextField>
+                  <ImageView fitHeight="30.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/D:/Intelijj/Projekt/src/main/java/zdj/lupa.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="45.0" prefWidth="24.0" />
+            <Pane prefHeight="72.0" prefWidth="174.0" stylesheets="@../../../../java/css/styles.css" />
+            <Label prefHeight="84.0" prefWidth="229.0" text="Maksymilian Laskowski">
+               <font>
+                  <Font name="Gentium Book Basic" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="47.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/D:/Intelijj/Projekt/src/main/java/zdj/admin.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="825.0" prefWidth="238.0" styleClass="white-background" stylesheets="file:/D:/Intelijj/Projekt/src/main/java/css/styles.css" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="259.0" prefWidth="238.0">
+               <children>
+                  <Label prefHeight="28.0" prefWidth="216.0">
+                     <font>
+                        <Font name="Gentium Book Basic" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <HBox fx:id="hBoxOne" alignment="CENTER_LEFT" maxWidth="-Infinity" onMouseClicked="#handleHBoxClick" onMousePressed="#selected" prefHeight="71.0" prefWidth="307.0" styleClass="mouse-move" stylesheets="file:/D:/Intelijj/Projekt/src/main/java/css/styles.css">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="67.0" text="Koszyk">
+                           <font>
+                              <Font name="Gentium Book Basic" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="43.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/D:/Intelijj/Projekt/src/main/java/zdj/koszyk.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hBoxTwo" alignment="CENTER_RIGHT" maxWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#handleHBoxClick" onMousePressed="#selected" prefHeight="71.0" prefWidth="266.0" styleClass="mouse-move" stylesheets="file:/D:/Intelijj/Projekt/src/main/java/css/styles.css">
+                     <children>
+                        <ImageView fitHeight="43.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/D:/Intelijj/Projekt/src/main/java/zdj/koszyk.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="166.0" text="Historia zamowień">
+                           <font>
+                              <Font name="Gentium Book Basic" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hBoxTree" alignment="CENTER_LEFT" maxWidth="-Infinity" onMouseClicked="#handleHBoxClick" onMousePressed="#selected" prefHeight="71.0" prefWidth="288.0" stylesheets="file:/D:/Intelijj/Projekt/src/main/java/css/styles.css">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="55.0" text="Sklep">
+                           <font>
+                              <Font name="Gentium Book Basic" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="43.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/D:/Intelijj/Projekt/src/main/java/zdj/koszyk.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <styleClass>
+                        <String fx:value="mouse-move" />
+                        <String fx:value="selected" />
+                     </styleClass>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="238.0">
+               <children>
+                  <Separator maxWidth="-Infinity" prefHeight="27.0" prefWidth="182.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="81.0" prefWidth="238.0">
+               <children>
+                  <Button fx:id="logout_button" mnemonicParsing="false" onAction="#logOutAction" prefHeight="48.0" prefWidth="144.0" stylesheets="file:/D:/Intelijj/Projekt/src/main/java/css/styles.css" text="Wyloguj">
+                     <styleClass>
+                        <String fx:value="round-button" />
+                        <String fx:value="mouse-move-button" />
+                     </styleClass></Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <Pane fx:id="centerPane" prefHeight="768.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="414.0" layoutY="336.0" mnemonicParsing="false" prefHeight="154.0" prefWidth="236.0" text="Scena sklepu" />
+         </children></Pane>
+   </center>
+</BorderPane>

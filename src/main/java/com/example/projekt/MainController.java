@@ -1,7 +1,9 @@
 package com.example.projekt;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -14,14 +16,21 @@ public class MainController {
     private Label haslo_label;
 
     @FXML
-    protected void klientButton() throws IOException {
-        Stage stage = new Stage();
+    protected void klientButton(ActionEvent event) throws IOException {
+        // utwórz i pokaż nowe okno
+        Stage newStage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("klient.fxml"));
         Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root, 500, 500);
-        stage.setTitle("Klient");
-        stage.setScene(scene);
-        stage.show();
+        Scene scene = new Scene(root, 1315, 890);
+        newStage.setTitle("Klient");
+        newStage.setScene(scene);
+        newStage.centerOnScreen();
+        newStage.show();
+
+        // zamknij obecne okno
+        Node source = (Node) event.getSource();
+        Stage currentStage = (Stage) source.getScene().getWindow();
+        currentStage.close();
     }
 
     @FXML
@@ -29,7 +38,7 @@ public class MainController {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("pracownik.fxml"));
         Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root, 500, 500);
+        Scene scene = new Scene(root, 600, 500);
         stage.setTitle("Pracownik");
         stage.setScene(scene);
         stage.show();

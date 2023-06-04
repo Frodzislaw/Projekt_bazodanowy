@@ -6,15 +6,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane fx:controller="com.example.projekt.MainController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="388.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projekt.MainController">
    <children>
       <PasswordField layoutX="107.0" layoutY="260.0" />
       <Label layoutX="99.0" layoutY="49.0" text="Aby zalogować podaj Email i hasło" />
       <Label layoutX="161.0" layoutY="129.0" prefHeight="17.0" prefWidth="81.0" text="Email" />
       <TextField layoutX="107.0" layoutY="152.0" />
-      <Label layoutX="161.0" layoutY="226.0" prefHeight="17.0" prefWidth="81.0" text="Hasło" fx:id="haslo_label" />
-      <Button layoutX="84.0" layoutY="324.0" mnemonicParsing="false" text="Klient" onAction="#klientButton" />
-      <Button layoutX="216.0" layoutY="324.0" mnemonicParsing="false" text="Pracownik" onAction="#pracownikButton"/>
+      <Label fx:id="haslo_label" layoutX="161.0" layoutY="226.0" prefHeight="17.0" prefWidth="81.0" text="Hasło" />
+      <Button layoutX="84.0" layoutY="324.0" mnemonicParsing="false" onAction="#klientButton" text="Klient" />
+      <Button layoutX="216.0" layoutY="324.0" mnemonicParsing="false" onAction="#pracownikButton" text="Pracownik" />
    </children>
 </AnchorPane>
