@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,7 +18,7 @@
 
 <BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projekt.KlientController">
    <top>
-      <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="1315.0" styleClass="white-background" stylesheets="file:/D:/Intelijj/Projekt/src/main/java/css/styles.css" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="1315.0" styleClass="white-background" stylesheets="@../../../../java/css/styles.css" BorderPane.alignment="CENTER">
          <children>
             <Label alignment="CENTER" prefHeight="84.0" prefWidth="218.0" text="Whisky i Wodotryski">
                <font>
@@ -26,11 +28,12 @@
             <Separator maxHeight="-Infinity" minHeight="-Infinity" orientation="VERTICAL" prefHeight="45.0" prefWidth="39.0" />
             <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="37.0" prefWidth="540.0" spacing="20.0">
                <children>
-                  <TextField prefHeight="34.0" prefWidth="497.0" promptText="search" stylesheets="file:/D:/Intelijj/Projekt/src/main/java/css/styles.css">
+                  <TextField prefHeight="34.0" prefWidth="497.0" promptText="search" stylesheets="@../../../../java/css/styles.css">
                      <styleClass>
+                        <String fx:value="round-button" />
                         <String fx:value="transparent" />
-                        <String fx:value="round-layout" />
-                     </styleClass></TextField>
+                     </styleClass>
+                  </TextField>
                   <ImageView fitHeight="30.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/D:/Intelijj/Projekt/src/main/java/zdj/lupa.png" />
@@ -54,7 +57,7 @@
       </HBox>
    </top>
    <left>
-      <VBox prefHeight="825.0" prefWidth="238.0" styleClass="white-background" stylesheets="file:/D:/Intelijj/Projekt/src/main/java/css/styles.css" BorderPane.alignment="CENTER">
+      <VBox prefHeight="825.0" prefWidth="238.0" styleClass="white-background" stylesheets="@../../../../java/css/styles.css" BorderPane.alignment="CENTER">
          <children>
             <VBox prefHeight="259.0" prefWidth="238.0">
                <children>
@@ -132,9 +135,18 @@
       </VBox>
    </left>
    <center>
-      <Pane fx:id="centerPane" prefHeight="768.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+      <Pane fx:id="centerPane" prefHeight="830.0" prefWidth="1079.0" styleClass="white-background" stylesheets="@../../../../java/css/styles.css" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="414.0" layoutY="336.0" mnemonicParsing="false" prefHeight="154.0" prefWidth="236.0" text="Scena sklepu" />
+            <TableView fx:id="table" layoutX="94.0" layoutY="38.0" prefHeight="588.0" prefWidth="851.0">
+              <columns>
+                <TableColumn fx:id="colIdProduktu" prefWidth="123.9999771118164" text="ID_produktu" />
+                <TableColumn fx:id="colNazwa" minWidth="0.0" prefWidth="180.79998779296875" text="Nazwa" />
+                  <TableColumn fx:id="colCena" minWidth="0.0" prefWidth="123.199951171875" text="Cena" />
+                  <TableColumn fx:id="colKategoria"  minWidth="0.0" prefWidth="156.00003051757812" text="Kategoria" />
+                  <TableColumn fx:id="colIloscNaStanie"  minWidth="0.0" prefWidth="136.79998779296875" text="Ilosc na stanie" />
+                  <TableColumn fx:id="colProducent" minWidth="0.0" prefWidth="131.199951171875" text="producent" />
+              </columns>
+            </TableView>
          </children></Pane>
    </center>
 </BorderPane>

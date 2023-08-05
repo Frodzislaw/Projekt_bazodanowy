@@ -8,9 +8,9 @@ public class DatabaseManager {
     private static Connection connection;
 
     public static void openConnection() {
-        String url = "jdbc:postgresql://localhost:5432/projektBazonadowy";
+        String url = "jdbc:postgresql://localhost:5432/projekt";
         String user = "postgres";
-        String password = "1234";
+        String password = "patryk06";
 
         try {
             connection = DriverManager.getConnection(url, user, password);

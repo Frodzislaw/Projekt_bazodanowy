@@ -1,4 +1,4 @@
-package com.example.projekt.baza;
+package com.example.projekt;
 
 public class produkt {
 

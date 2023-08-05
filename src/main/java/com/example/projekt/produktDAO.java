@@ -1,6 +1,7 @@
-package com.example.projekt.baza;
+package com.example.projekt;
 
 import com.example.projekt.DatabaseManager;
+import com.example.projekt.produkt;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

@@ -1,7 +1,5 @@
 package com.example.projekt;
 
-import com.example.projekt.baza.produkt;
-import com.example.projekt.baza.produktDAO;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,7 +7,6 @@ import javafx.stage.Stage;
 
 
 import java.io.IOException;
-import java.sql.*;
 import java.util.List;
 
 
@@ -25,7 +22,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        //launch();
+        launch();
         DatabaseManager.openConnection();
 
         produktDAO przedmiotDAO = new produktDAO();
