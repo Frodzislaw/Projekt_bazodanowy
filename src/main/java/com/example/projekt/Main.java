@@ -1,6 +1,8 @@
 package com.example.projekt;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -23,15 +25,9 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch();
-        DatabaseManager.openConnection();
+        produktDAO dao = new produktDAO();
+//        ObservableList<produkt> produkty = FXCollections.observableArrayList(dao.pobierzWszystkieProdukty());
+//        System.out.println(produkty.get(0).getIlosc_na_stanie());
 
-        produktDAO przedmiotDAO = new produktDAO();
-        List<produkt> listaPrzedmiotow = przedmiotDAO.pobierzWszystkieProdukty();
-
-        for(produkt i: listaPrzedmiotow){
-
-            System.out.println(i);
-        }
-        DatabaseManager.closeConnection();
     }
 }

@@ -8,12 +8,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projekt.MainController">
    <children>
-      <PasswordField layoutX="107.0" layoutY="260.0" />
+      <PasswordField fx:id="password" layoutX="107.0" layoutY="260.0" />
       <Label layoutX="99.0" layoutY="49.0" text="Aby zalogować podaj Email i hasło" />
       <Label layoutX="161.0" layoutY="129.0" prefHeight="17.0" prefWidth="81.0" text="Email" />
-      <TextField layoutX="107.0" layoutY="152.0" />
+      <TextField fx:id="login" layoutX="107.0" layoutY="152.0" />
       <Label fx:id="haslo_label" layoutX="161.0" layoutY="226.0" prefHeight="17.0" prefWidth="81.0" text="Hasło" />
-      <Button layoutX="84.0" layoutY="324.0" mnemonicParsing="false" onAction="#klientButton" text="Klient" />
-      <Button layoutX="216.0" layoutY="324.0" mnemonicParsing="false" onAction="#pracownikButton" text="Pracownik" />
+      <Button layoutX="52.0" layoutY="324.0" mnemonicParsing="false" onAction="#klientButton" text="Klient" />
+      <Button layoutX="266.0" layoutY="324.0" mnemonicParsing="false" onAction="#pracownikButton" text="Pracownik" />
+      <Button fx:id="ZalogujButton" layoutX="128.0" layoutY="323.0" mnemonicParsing="false" onAction="#zaloguj" prefHeight="26.0" prefWidth="107.0" text="Zaloguj" />
    </children>
 </AnchorPane>

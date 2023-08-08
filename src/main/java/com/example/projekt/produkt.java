@@ -1,5 +1,8 @@
 package com.example.projekt;
 
+import javafx.collections.FXCollections;
+import javafx.scene.control.ComboBox;
+
 public class produkt {
 
     private Integer id_produktu;
@@ -8,6 +11,7 @@ public class produkt {
     private String kategoria;
     private Integer ilosc_na_stanie;
     private String producent;
+    private ComboBox ilosc_produktow;
 
     public produkt(int id_produktu, String nazwa, double cena, String kategoria, Integer ilosc_na_stanie, String producent) {
         this.id_produktu = id_produktu;
@@ -16,6 +20,8 @@ public class produkt {
         this.kategoria = kategoria;
         this.ilosc_na_stanie = ilosc_na_stanie;
         this.producent = producent;
+        this.ilosc_produktow = new ComboBox<>(FXCollections.observableArrayList(0,1,2, 3, 6 ,22));
+        ilosc_produktow.setValue(0);
     }
 
     public int getId_produktu() {
@@ -66,6 +72,14 @@ public class produkt {
         this.producent = producent;
     }
 
+    public ComboBox getIlosc_produktow() {
+        return ilosc_produktow;
+    }
+
+    public void setIlosc_produktow(ComboBox ilosc_produktow) {
+        this.ilosc_produktow = ilosc_produktow;
+    }
+
     @Override
     public String toString() {
         return "id_produktu=" + id_produktu +
@@ -73,6 +87,7 @@ public class produkt {
                 ", cena=" + cena +
                 ", kategoria='" + kategoria + '\'' +
                 ", ilosc_na_stanie=" + ilosc_na_stanie +
-                ", producent='" + producent + '\'';
+                ", producent='" + producent + '\''+"Wybrana liosc: " + ilosc_produktow.getValue();
+
     }
 }

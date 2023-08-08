@@ -22,6 +22,8 @@ import java.io.IOException;
 public class KlientController {
 
     @FXML
+    private Button dodajButton;
+    @FXML
     private TableView<produkt> table;
 
     @FXML
@@ -62,6 +64,7 @@ public class KlientController {
     private Pane centerPane;
 
     private Pane originalPane;
+
 
     @FXML
     public void initialize() {
@@ -143,5 +146,25 @@ public class KlientController {
 
         }
     }
+    @FXML
+    public void loadNewWindow(ActionEvent event) {
+        try {
+            // Load the FXML file
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ButtonZamowienia.fxml"));
+
+            // Create the scene
+            Scene scene = new Scene(fxmlLoader.load());
+
+            // Create a new stage and set the scene
+            Stage stage = new Stage();
+            stage.setScene(scene);
+
+            // Show the new stage
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
+
