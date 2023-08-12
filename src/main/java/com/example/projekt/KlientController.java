@@ -88,11 +88,7 @@ public class KlientController {
     protected void handleHBoxClick(MouseEvent event) {
         try {
             Pane pane;
-
-            if (event.getSource() == hBoxOne) {
-                pane = FXMLLoader.load(getClass().getResource("koszyk.fxml")); // Załadowanie nowego panelu
-                rootPane.setCenter(pane);
-            } else if (event.getSource() == hBoxTwo) {
+       if (event.getSource() == hBoxTwo) {
                 pane = FXMLLoader.load(getClass().getResource("hisotria_klienta.fxml")); // Załadowanie nowego panelu
                 rootPane.setCenter(pane);
             } else if (event.getSource() == hBoxTree){

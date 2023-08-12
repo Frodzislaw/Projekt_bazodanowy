@@ -36,6 +36,17 @@ public class MainController {
     @FXML
     protected void pracownikButton(ActionEvent event) throws IOException {
         loginAndOpenWindow("pracownik.fxml", "Pracownik", 600, 500, event);
+
+        LoggedInEmployee loggedInEmployee = UserManager.getInstance().getLoggedInEmployee();
+        Integer id_pracownika = loggedInEmployee.getId_pracownika();
+        String imie = loggedInEmployee.getImie();
+        String nazwisko = loggedInEmployee.getNazwisko();
+        Integer id_konta = loggedInEmployee.getId_konta();
+        String rola = loggedInEmployee.getRola();
+
+        System.out.println(id_pracownika + " " + imie + " " + nazwisko + " " + id_konta + " " + rola);
+
+
     }
     @FXML
     protected void zaloguj(ActionEvent event) {
@@ -54,13 +65,13 @@ public class MainController {
                     int userId = resultSet.getInt("id_konta");
                     String userRole = resultSet.getString("typ_konta");
 
-                    LoggedInUser loggedInUser = new LoggedInUser(userId, email, userRole);
-
-                    UserManager.getInstance().setLoggedInUser(loggedInUser);
-
                     if ("klient".equals(userRole)) {
+                        LoggedInUser loggedInUser = createLoggedInUserFromClientTable(userId);
+                        UserManager.getInstance().setLoggedInUser(loggedInUser);
                         klientButton(event);
                     } else if ("pracownik".equals(userRole)) {
+                        LoggedInEmployee loggedInEmployee = createLoggedInEmployeeFromEmployeeTable(userId);
+                        UserManager.getInstance().setLoggedInEmployee(loggedInEmployee);
                         pracownikButton(event);
                     }
                 } else {
@@ -73,6 +84,53 @@ public class MainController {
             throw new RuntimeException(e);
         }
     }
+
+    private LoggedInUser createLoggedInUserFromClientTable(int userId) {
+        Connection connection = DatabaseManager.getConnection();
+        String sql = "SELECT nazwa_firmy, adres, nip FROM klient WHERE id_konta = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, userId);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    String name = resultSet.getString("nazwa_firmy");
+                    String address = resultSet.getString("adres");
+                    String nip = resultSet.getString("nip");
+                    return new LoggedInUser(userId, name, address, nip);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    private LoggedInEmployee createLoggedInEmployeeFromEmployeeTable(int userId) {
+        Connection connection = DatabaseManager.getConnection();
+        String sql = "SELECT id_pracownika, imie, nazwisko, rola FROM pracownik WHERE id_konta = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, userId);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    int employeeId = resultSet.getInt("id_pracownika");
+                    String firstName = resultSet.getString("imie");
+                    String lastName = resultSet.getString("nazwisko");
+                    String role = resultSet.getString("rola");
+                    return new LoggedInEmployee(employeeId, firstName, lastName, userId, role);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+
 
     private void loginAndOpenWindow(String fxmlFile, String title, double width, double height, ActionEvent event) throws IOException {
         // utwórz i pokaż nowe okno

@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projekt.KlientController">
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="841.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projekt.KlientController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="1315.0" styleClass="white-background" stylesheets="@../../../../java/css/styles.css" BorderPane.alignment="CENTER">
          <children>
@@ -57,9 +57,9 @@
       </HBox>
    </top>
    <left>
-      <VBox prefHeight="825.0" prefWidth="238.0" styleClass="white-background" stylesheets="@../../../../java/css/styles.css" BorderPane.alignment="CENTER">
+      <VBox prefHeight="790.0" prefWidth="239.0" styleClass="white-background" stylesheets="@../../../../java/css/styles.css" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="259.0" prefWidth="238.0">
+            <VBox prefHeight="187.0" prefWidth="238.0">
                <children>
                   <Label prefHeight="28.0" prefWidth="216.0">
                      <font>
@@ -69,20 +69,6 @@
                         <Insets left="10.0" />
                      </padding>
                   </Label>
-                  <HBox fx:id="hBoxOne" alignment="CENTER_LEFT" maxWidth="-Infinity" onMouseClicked="#handleHBoxClick" onMousePressed="#selected" prefHeight="71.0" prefWidth="307.0" styleClass="mouse-move" stylesheets="file:/C:/Users/Maksymilian/Desktop/projket_bazodanowy/Projekt_bazodanowy/src/main/java/css/styles.css">
-                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="67.0" text="Koszyk">
-                           <font>
-                              <Font name="Gentium Book Basic" size="20.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="43.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="file:/D:/Intelijj/Projekt/src/main/java/zdj/koszyk.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
                   <HBox fx:id="hBoxTwo" alignment="CENTER_RIGHT" maxWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#handleHBoxClick" onMousePressed="#selected" prefHeight="71.0" prefWidth="266.0" styleClass="mouse-move" stylesheets="file:/C:/Users/Maksymilian/Desktop/projket_bazodanowy/Projekt_bazodanowy/src/main/java/css/styles.css">
                      <children>
                         <ImageView fitHeight="43.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
@@ -147,7 +133,7 @@
                   <TableColumn fx:id="colProducent" minWidth="0.0" prefWidth="131.199951171875" text="producent" />
               </columns>
             </TableView>
-            <Button fx:id="dodajButton" layoutX="405.0" layoutY="677.0" mnemonicParsing="false" onAction="#loadNewWindow" prefHeight="75.0" prefWidth="266.0" text="Stwórz Zamówienie" />
+            <Button fx:id="dodajButton" layoutX="405.0" layoutY="662.0" mnemonicParsing="false" onAction="#loadNewWindow" prefHeight="75.0" prefWidth="266.0" text="Stwórz Zamówienie" />
          </children></Pane>
    </center>
 </BorderPane>

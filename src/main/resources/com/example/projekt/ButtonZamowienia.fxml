@@ -17,6 +17,6 @@
         </columns>
       </TableView>
       <Button fx:id="zatwierdzButoon" layoutX="127.0" layoutY="377.0" mnemonicParsing="false" onAction="#zatwierdz" prefHeight="73.0" prefWidth="198.0" text="Zatwierdz" />
-      <Button layoutX="361.0" layoutY="377.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="198.0" text="Anuluj" />
+      <Button fx:id="anulujButoon" onAction="#anuluj" layoutX="361.0" layoutY="377.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="198.0" text="Anuluj" />
    </children>
 </AnchorPane>
