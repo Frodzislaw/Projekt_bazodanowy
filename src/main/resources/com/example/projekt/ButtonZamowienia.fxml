@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,7 +17,8 @@
             <TableColumn fx:id="colComboBox" prefWidth="95.9998779296875" />
         </columns>
       </TableView>
-      <Button fx:id="zatwierdzButoon" layoutX="127.0" layoutY="377.0" mnemonicParsing="false" onAction="#zatwierdz" prefHeight="73.0" prefWidth="198.0" text="Zatwierdz" />
-      <Button fx:id="anulujButoon" onAction="#anuluj" layoutX="361.0" layoutY="377.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="198.0" text="Anuluj" />
+      <Button fx:id="zatwierdzButoon" layoutX="127.0" layoutY="403.0" mnemonicParsing="false" onAction="#zatwierdz" prefHeight="73.0" prefWidth="198.0" text="Zatwierdz" />
+      <Button fx:id="anulujButoon" layoutX="360.0" layoutY="403.0" mnemonicParsing="false" onAction="#anuluj" prefHeight="73.0" prefWidth="198.0" text="Anuluj" />
+      <Label fx:id ="informacja_zwrotna" layoutX="254.0" layoutY="362.0" prefHeight="18.0" prefWidth="212.0" />
    </children>
 </AnchorPane>

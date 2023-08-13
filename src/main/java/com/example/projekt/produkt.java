@@ -20,7 +20,7 @@ public class produkt {
         this.kategoria = kategoria;
         this.ilosc_na_stanie = ilosc_na_stanie;
         this.producent = producent;
-        this.ilosc_produktow = new ComboBox<>(FXCollections.observableArrayList(0,1,2, 3, 6 ,22));
+        this.ilosc_produktow = new ComboBox<>(FXCollections.observableArrayList(0,5,25, 50, 100 ,250));
         ilosc_produktow.setValue(0);
     }
 
